@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    h1{
+      background-color: coral;
+      color: white;
+      text-align: center;
+    }
+    th{
+      text-align: right ;
+      color: blue;
+    }
+    td{
+      color: coral;
+    }
+    table {
+      width: 600px;
+      margin-left: 400px;
+      border:1px solid blue ;
+    }
+    input{
+      border: 2px inset gray;
+    }
+    button{
+      border: 3px outset gray;
+    }
+  </style>
+</head>
+<body>
+<form>
+  <table>
+    <tr>
+      <td colspan="4"><h1>SỞ THÍCH CỦA BẠN</h1></td>
+    </tr>
+    <tr>
+      <th>Họ Và Tên: </th>
+      <td colspan="3"><input type="text" size="40"></td>
+    </tr>
+    <tr>
+      <th>Email: </th>
+      <td colspan="3"><input type="text" size="30"></td>
+    </tr>
+    <tr>
+      <th>Sở Thích: </th>
+      <td><input type="checkbox">Thể Thao</td>
+      <td><input type="checkbox">Âm Nhạc</td>
+      <td><input type="checkbox">Đọc Sách</td>
+    </tr>
+    <tr>
+      <td rowspan="2"></td>
+      <td><input type="checkbox">Lướt Web</td>
+      <td><input type="checkbox">Chơi Game</td>
+      <td><input type="checkbox">Điện Ảnh</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox">Du Lịch</td>
+    </tr>
+    <tr style="text-align: center">
+      <td colspan="4"><button>Gửi Thông Tin</button> <button>Nhập Lại</button></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

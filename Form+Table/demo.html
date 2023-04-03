@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    h2{
+      background-color: red;
+      color: White;
+      text-align: center;
+    }
+    table {
+      width: 800px;
+      margin-left: 250px;
+      border: 1px solid;
+    }
+    .letrai {
+      text-align: right;
+    }
+    .leo {
+      text-align: right;
+      vertical-align: top;
+    }
+    .le {
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+<form>
+  <table>
+    <tr>
+      <th colspan="4"><h2>SỞ THÍCH CỦA BẠN</h2></th>
+    </tr>
+    <tr>
+      <td class="letrai"> Họ Và Tên: </td>
+      <td colspan="3"><input type="text" name="Hovaten" size="35%"></td>
+    </tr>
+    <tr>
+      <td class="letrai"> Email: </td>
+      <td colspan="3" class="lephai"><input type="text" name="Email" size="25%"></td>
+    </tr>
+    <tr>
+      <td class="leo" rowspan="4"> Sở Thích: </td>
+      <td class="le"><input type="checkbox" name="Thể Thao">Thể Thao</td>
+      <td><input type="checkbox" name="Âm Nhạc">Âm Nhạc</td>
+      <td><input type="checkbox" name="Đọc Sách">Đọc Sách</td>
+    </tr>
+    <tr>
+      <td class="le"><input type="checkbox" name="Luot Web">Lướt Web</td>
+      <td> <input type="checkbox" name="Choi Game">Chơi Game</td>
+      <td> <input type="checkbox" name="Dien Anh">Điện Ảnh</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="Du lich">Du Lich</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="le"><input type="submit" name="Gui Thong Tin" VALUE="Gửi Thông Tin">
+        <input type="reset" name="Nhap lai" VALUE="Nhập Lại"></td>
+      <td></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
