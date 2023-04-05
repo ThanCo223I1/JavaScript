@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let temperatureC;
+    let temperatureF;
+    let doC
+    let doF
+    temperatureC = +prompt("Nhập độ C: ");
+    temperatureF = +prompt("Nhập độ F: ");
+    doF = temperatureC * 1.8 + 32;
+    doC = (temperatureF - 32) / 1.8;
+    document.write(doF + " Độ F.");
+    document.write("<br>")
+    document.write(doC + " Độ C");
+</script>
