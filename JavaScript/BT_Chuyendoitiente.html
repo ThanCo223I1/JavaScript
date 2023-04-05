@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<form>
+    <table style="text-align: center">
+        <tr>
+            <td>Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+        </tr>
+        <tr>
+            <td>
+                <input placeholder="Nhập số tiền" type="text" id="money">
+            </td>
+            <td>
+                <select id="From Currency">
+                    <option value="23000">VND</option>
+                    <option value="1">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="To Currency">
+                    <option value="23000">VND</option>
+                    <option value="1.">USD</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="Convert()">Convert</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+<script>
+    function Convert() {
+        let Amount = document.getElementById("money");
+        let FromC = document.getElementById("From Currency");
+        let ToC = document.getElementById("To Currency");
+        let sotien = Amount.value;
+        let chuyendoi1 = FromC.value;
+        let chuyendoi2 = ToC.value
+        document.write("Số Tiền Sau Chuyển Đổi Là: " + sotien / chuyendoi1 * chuyendoi2);
+    }
+</script>
