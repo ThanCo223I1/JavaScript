@@ -6,42 +6,46 @@
     <style>
         table {
             text-align: center;
-            margin-left: 450px;
+
         }
 
         h1 {
             color: blue;
             text-align: center;
         }
-        .demo{
+
+        .demo {
             margin-block: 2px;
-            border: 1px solid;
+            border: 3px inset gray;
+            border-collapse: collapse;
+            width: 45%;
         }
-        .name td{
+
+        .name td {
             color: blue;
 
         }
-        .color1{
+
+        .color1 {
             background-color: orange;
         }
     </style>
 </head>
 <body>
-<form action="">
-    <h1>THỜI KHÓA BIỂU</h1>
+<div align="center">
     <table class="name">
-
+        <h1>THỜI KHÓA BIỂU</h1>
         <tr>
             <td style="text-align: left">Lớp:</td>
             <td style="text-align: left">C0323H1</td>
-            <td colspan="3" width="170px" ></td>
+            <td colspan="3" width="170px"></td>
             <td>Thời gian học:</td>
             <td style="text-align: left">09h30 - 11h00</td>
         </tr>
         <tr>
             <td style="text-align: left">Giáo Viên:</td>
             <td style="text-align: left">ToànNV</td>
-            <td colspan="3" width="160px" ></td>
+            <td colspan="3" width="160px"></td>
             <td style="text-align: left">Ngày học:</td>
             <td style="text-align: left">Thứ: 3, 5, 7</td>
         </tr>
@@ -51,7 +55,7 @@
             <td colspan="4"></td>
         </tr>
     </table>
-    <table border="1" class="demo">
+    <table style="border-spacing: 2px" border="2px"  class="demo">
         <tr>
             <th colspan="3"></th>
             <th style="background-color: yellow">Thứ 3</th>
@@ -89,6 +93,6 @@
             <td>...</td>
         </tr>
     </table>
-</form>
+</div>
 </body>
 </html>
