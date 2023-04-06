@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <img id="myImage" src=ronaldo.jpg style = "width: 30%"/><br>
+    <input type="button" value="Click Me" onclick="moveRight();"/></form>
+</body>
+</html>
+<script>
+    let imgc = null;
+    imgc = document.getElementById('myImage');
+
+    function init() {
+        imgc = document.getElementById('myImage');
+        imgc.style.position = 'relative';
+        imgc.style.left = '0px';
+    }
+
+    function moveRight() {
+        imgc.style.left = parseInt(imgc.style.left) + 10 + 'px';
+    }
+
+    window.onload = init;
+
+</script>
