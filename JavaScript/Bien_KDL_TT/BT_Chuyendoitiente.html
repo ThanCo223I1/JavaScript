@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-
+    <style>
+        table{
+            border: 1px solid gray;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
-<form>
-    <table style="text-align: center">
+    <table>
         <tr>
             <td>Amount</td>
             <td>From Currency</td>
@@ -21,12 +26,16 @@
                 <select id="From Currency">
                     <option value="23000">VND</option>
                     <option value="1">USD</option>
+                    <option value="130">JPY</option>
+                    <option value="6.8">NDT</option>
                 </select>
             </td>
             <td>
                 <select id="To Currency">
                     <option value="23000">VND</option>
-                    <option value="1.">USD</option>
+                    <option value="1">USD</option>
+                    <option value="130">JPY</option>
+                    <option value="6.8">NDT</option>
                 </select>
             </td>
             <td>
@@ -34,8 +43,8 @@
             </td>
         </tr>
     </table>
-</form>
 </body>
+<p id="kq"></p>
 </html>
 <script>
     function Convert() {
@@ -45,6 +54,6 @@
         let sotien = Amount.value;
         let chuyendoi1 = FromC.value;
         let chuyendoi2 = ToC.value
-        document.write("Số Tiền Sau Chuyển Đổi Là: " + sotien / chuyendoi1 * chuyendoi2);
+        document.getElementById("kq").innerHTML ="Result is: " + sotien / chuyendoi1 * chuyendoi2 ;
     }
 </script>

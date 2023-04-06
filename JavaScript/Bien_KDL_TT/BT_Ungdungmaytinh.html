@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            width: 450px;
+            border: 1px solid ;
+            padding: 5px;
+        }
+        table{
+            padding: 10px;
+        }
+        input{
+            width: 170px;
+        }
+    </style>
+</head>
+<body>
+<center>
+<form>
+    <table border="1">
+        <label>
+            <h1>Caculator</h1>
+            <input type="number" id="number1">
+            <input type="number" id="number2"><br>
+        </label><br>
+        <tr>
+            <td>
+                <button type="button" onclick="Addition()">Addition(+)</button>
+            </td>
+            <td>
+                <button type="button" onclick="Subtraction()">Subtraction(-)</button>
+            </td>
+            <td>
+                <button type="button" onclick="Multiplication()">Multiplication(*)</button>
+            </td>
+            <td>
+                <button type="button" onclick="Division()">Division(/)</button>
+            </td>
+        </tr>
+    </table> <br>
+   <p id="Result"></p>
+</form>
+</center>
+
+</body>
+</html>
+<script>
+    function Addition() {
+        let Cal1 = document.getElementById("number1");
+        let Cal2 = document.getElementById("number2");
+        Cal1 = parseInt(Cal1.value);
+        Cal2 = parseInt(Cal2.value);
+        let sum;
+        sum = Cal1 + Cal2
+        document.getElementById("Result").innerHTML ="Result Sum: " + sum;
+    }
+
+    function Subtraction() {
+        let Cal1 = document.getElementById("number1");
+        let Cal2 = document.getElementById("number2");
+        Cal1 = parseInt(Cal1.value);
+        Cal2 = parseInt(Cal2.value)
+        let subtraction;
+        subtraction = Cal1 - Cal2;
+        document.getElementById("Result").innerHTML = "Result Subtraction: " + subtraction;
+    }
+
+    function Multiplication() {
+        let Cal1 = document.getElementById("number1");
+        let Cal2 = document.getElementById("number2");
+        Cal1 = parseInt(Cal1.value);
+        Cal2 = parseInt(Cal2.value)
+        let multiplication;
+        multiplication = Cal1 * Cal2;
+        document.getElementById("Result").innerHTML ="Result Multiplication: " + multiplication;
+    }
+
+    function Division() {
+        let Cal1 = document.getElementById("number1");
+        let Cal2 = document.getElementById("number2");
+        Cal1 = parseInt(Cal1.value);
+        Cal2 = parseInt(Cal2.value)
+        let divide;
+        divide = Cal1 / Cal2;
+        document.getElementById("Result").innerHTML = "Result Division: " + divide;
+    }
+
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border: 2px solid;
+            padding: 10px;
+            text-align: center;
+            width: 500px;
+        }
+
+        input {
+            border: 3px inset gray;
+            width: 300px;
+        }
+
+        button {
+            border: 3px outset gray;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <table>
+        <tr class="ww">
+            <td><h1>Check Leap Year</h1>
+                <input placeholder="Check Leap Year" type="text" id="Check">
+                <button type="button" onclick="LeapYear()">Check</button>
+                <p id="result"></p>
+            </td>
+        </tr>
+
+    </table>
+</center>
+</body>
+</html>
+<script>
+    function LeapYear() {
+        let year = document.getElementById("Check")
+        year = parseInt(year.value)
+        if (year % 4 === 0) {
+            if (year % 100 === 0 && year % 400 !== 0) {
+                document.getElementById("result").innerHTML = year + ":" + "Không Phải Là Năm Nhuận"
+            } else {
+                document.getElementById("result").innerHTML = year + ":" + "Là Năm Nhuận"
+            }
+        } else {
+            document.getElementById("result").innerHTML = year + ":" + "Không Phải Là Năm Nhuận"
+
+        }
+    }
+</script>
