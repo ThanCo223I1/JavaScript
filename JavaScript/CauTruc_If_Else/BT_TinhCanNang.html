@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border: 2px solid;
+            text-align: center;
+            width: 400px;
+            height: 200px;
+        }
+
+        input {
+            border: 2px inset gray;
+        }
+
+        button {
+            border: 2px inset gray;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <table>
+        <tr>
+            <td><h1>Tính Chỉ Số Cân Nặng</h1></td>
+        </tr>
+        <tr>
+            <td>Nhập Cân Nặng (kg): <input type="text" id="weight"><br></td>
+        </tr>
+        <tr>
+            <td>Nhập Chiều Cao (m): <input type="text" id="height"><br></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="Check()">Kiểm Tra</button>
+            </td>
+        </tr>
+        <tr>
+            <td><p id="Result"></p></td>
+        </tr>
+    </table>
+</center>
+</body>
+</html>
+<script>
+    function Check() {
+        let enterWeight = document.getElementById("weight")
+        let enterHeight = document.getElementById("height")
+        enterWeight = parseFloat(enterWeight.value)
+        enterHeight = parseFloat(enterHeight.value)
+        let BMI = enterWeight / (enterHeight * enterHeight)
+        if (BMI < 18) {
+            document.getElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI + " Thiếu Cân ";
+        } else if (BMI < 25) {
+            document.getElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI + " Bình Thường ";
+        } else if (BMI < 30) {
+            document.getElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI + " Thừa Cân ";
+        } else {
+            tElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI + " Béo Phì";
+        }
+    }
+</script>
+
