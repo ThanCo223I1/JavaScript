@@ -52,13 +52,13 @@
         enterHeight = parseFloat(enterHeight.value)
         let BMI = enterWeight / (enterHeight * enterHeight)
         if (BMI < 18) {
-            document.getElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI + " Thiếu Cân ";
+            document.getElementById("Result").innerHTML = "Chỉ Số BMI là: "  + BMI.toFixed(2) + " Thiếu Cân ";
         } else if (BMI < 25) {
-            document.getElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI + " Bình Thường ";
+            document.getElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI.toFixed(2) + " Bình Thường ";
         } else if (BMI < 30) {
-            document.getElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI + " Thừa Cân ";
+            document.getElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI.toFixed(2) + " Thừa Cân ";
         } else {
-            tElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI + " Béo Phì";
+            tElementById("Result").innerHTML = "Chỉ Số BMI là: " + BMI.toFixed(2) + " Béo Phì";
         }
     }
 </script>
