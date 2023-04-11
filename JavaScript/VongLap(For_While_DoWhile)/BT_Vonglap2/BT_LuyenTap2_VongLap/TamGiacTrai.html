@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .m2.on{
+
+        }
+    </style>
+</head>
+<body>
+<p id="result"></p>
+<button onclick="m1()">Tam Giác 1</button>
+<button onclick="m2()" class="m2">Tam Giác 2</button>
+<button onclick="m3()">Tam Giác 3</button>
+<button onclick="m4()">Tam Giác 4</button>
+</body>
+</html>
+<script>
+    function m1() {
+        let a = ""
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                a += "* "
+            }
+            a += "<br>"
+        }
+        document.getElementById("result").innerHTML = a
+    }
+
+    function m2() {
+        let a = ""
+        for (let i = 0; i < 5; i++) {
+            for (let j = 5; j > i; j--) {
+                a += "* "
+            }
+            a += "<br>"
+        }
+        document.getElementById("result").innerHTML = a
+    }
+
+    function m3() {
+        let data = ""
+        for (let i = 0; i < 5; i++) {
+            for (let j = 4; j > i; j--) {
+                data += "&ensp; "
+            }
+            for (let j = 0; j <= i; j++) {
+                data += "* "
+
+            }
+            data += "<br>"
+        }
+        document.getElementById("result").innerHTML = data
+    }
+
+    function m4() {
+        let data = ""
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < i; j++) {
+                data += "&ensp; "
+            }
+            for (let j = 4; j >= i; j--) {
+                data += "* "
+
+            }
+            data += "<br>"
+        }
+        document.getElementById("result").innerHTML = data
+    }
+
+
+</script>

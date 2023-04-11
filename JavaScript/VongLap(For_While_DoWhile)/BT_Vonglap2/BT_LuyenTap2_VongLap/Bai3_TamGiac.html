@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #result2 {
+      text-align: right;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+<div id="result"></div>
+<div id="result2"></div>
+<button onclick="m1()">Tamgiac1</button>
+<button onclick="m2()">Tamgiac2</button>
+<button onclick="m3()">Tamgiac3</button>
+<button onclick="m4()">Tamgiac4</button>
+</body>
+<script>
+  //tam giác vuông dưới trái
+  function m1() {
+    let data = ""
+    for (let i = 0; i < 5; i++) {
+      for (let j = 0; j <= i; j++) {
+        data += "* "
+      }
+      data += "<br>"
+    }
+    document.getElementById("result").innerHTML = data
+  }
+
+  //tam giác vuông trên trái
+  function m2() {
+    let data = ""
+    for (let i = 0; i < 5; i++) {
+      for (let j = 5; j > i; j--) {
+        data += "* "
+      }
+      data += "<br>"
+    }
+    document.getElementById("result").innerHTML = data
+  }
+
+  //sử dụng css để vẽ
+  // //tam giác vuông dưới trái
+  // function m3() {
+  //     let data = ""
+  //     for (let i = 0; i < 5; i++) {
+  //         for (let j = 0; j <= i; j++) {
+  //             data += "* "
+  //         }
+  //         data += "<br>"
+  //     }
+  //     document.getElementById("result2").innerHTML = data
+  // }
+  //
+  // //tam giác vuông trên trái
+  // function m4() {
+  //     let data = ""
+  //     for (let i = 0; i < 5; i++) {
+  //         for (let j = 5; j > i; j--) {
+  //             data += "* "
+  //         }
+  //         data += "<br>"
+  //     }
+  //     document.getElementById("result2").innerHTML = data
+  // }
+
+  // tam giác vuông dưới phải
+  function m3() {
+    let data = ""
+    for (let i = 0; i < 5; i++) {
+      for (let j = 4; j > i; j--) {
+        data += "&ensp; "
+      }
+      for (let j = 0; j <= i; j++) {
+        data += "* "
+      }
+      data += "<br>"
+    }
+    document.getElementById("result").innerHTML = data
+  }
+
+  // tam giác vuông trên phải
+  function m4() {
+    let data = ""
+    for (let i = 0; i < 5; i++) {
+      for (let j = 0; j < i; j++) {
+        data += "&ensp;  "
+      }
+      for (let j = 4; j >= i; j--) {
+        data += "* "
+      }
+      data += "<br>"
+    }
+    document.getElementById("result").innerHTML = data
+  }
+</script>
+</html>
