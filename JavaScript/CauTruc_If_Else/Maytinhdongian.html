@@ -5,32 +5,38 @@
     <title>Title</title>
     <style>
         button {
+            border-radius: 50px;
             width: 60px;
             height: 60px;
             margin: 10px;
-            border: 3px outset gray;
+            border: 1px gray;
             font-size: 30px;
             background-color: gray;
         }
 
         body {
-            border: 5px inset gray;
+            border-radius: 10px;
+            border: 8px inset gray;
             padding: 10px;
             width: 350px;
         }
 
         input {
-            border: 3px inset gray;
-            text-align: center;
+            font-size: 30px;
+            border-radius: 10px;
+            border: 8px inset gray;
+            text-align: right;
             width: 300px;
             height: 50px;
             margin: 10px;
         }
         h2{
+            border-radius: 10px;
             width: 100px;
             border: 1px solid;
         }
         .tt{
+
            text-align: right;
         }
         table{
@@ -48,37 +54,37 @@
 <body>
 <table>
     <tr class="tt">
-        <td> <h4>FX 570</h4></td>
+        <td> <h4>FX-570</h4></td>
     </tr>
     <tr class="th"> <td><h2>CASIO</h2></td></tr>
 </table>
 <center>
 
-    <input type="text" id="enterNumber"><br>
+    <input type="text" id="enterNumber" ><br>
     <button onclick="Input(this.value)" type="button" value="(">(</button>
     <button onclick="Input(this.value)" type="button" value=")">)</button>
     <button onclick="Input(this.value)" type="button" value=".">.</button>
-    <button onclick="Input(this.value)" type="button" value="%">%</button>
+    <button style="background-color: orange" onclick="Input(this.value)" type="button" value="%">%</button>
     <br>
     <button onclick="Input(this.value)" type="button" value="1">1</button>
     <button onclick="Input(this.value)" type="button" value="2">2</button>
     <button onclick="Input(this.value)" type="button" value="3">3</button>
-    <button onclick="Input(this.value)" type="button" value="+">+</button>
+    <button style="background-color: orange" onclick="Input(this.value)" type="button" value="+">+</button>
     <br>
     <button onclick="Input(this.value)" type="button" value="4">4</button>
     <button onclick="Input(this.value)" type="button" value="5">5</button>
     <button onclick="Input(this.value)" type="button" value="6">6</button>
-    <button onclick="Input(this.value)" type="button" value="-">-</button>
+    <button style="background-color: orange" onclick="Input(this.value)" type="button" value="-">-</button>
     <br>
     <button onclick="Input(this.value)" type="button" value="7">7</button>
     <button onclick="Input(this.value)" type="button" value="8">8</button>
     <button onclick="Input(this.value)" type="button" value="9">9</button>
-    <button onclick="Input(this.value)" type="button" value="*">*</button>
+    <button style="background-color: orange" onclick="Input(this.value)" type="button" value="*">x</button>
     <br>
-    <button onclick="Delete();" value="C">C</button>
+    <button style="background-color: orange" onclick="Delete();" value="C">C</button>
     <button onclick="Input(this.value)" type="button" value="0">0</button>
-    <button onclick="Result();"  value="=">=</button>
-    <button onclick="Input(this.value)" type="button" value="/">/</button>
+    <button style="background-color: orange" onclick="Result();"  value="=">=</button>
+    <button style="background-color: orange" onclick="Input(this.value)" type="button" value="/">/</button>
 </center>
 </body>
 </html>
@@ -89,7 +95,7 @@
     }
     function Result(){
         let result = eval(enter.value);
-        enter.value = result;
+        enter.value = result ;
     }
     function  Delete(){
         enter.value = "";

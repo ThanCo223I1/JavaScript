@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        img {
+            width: 400px;
+            height: 145px;
+            border: 1px solid;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<img id="Img1" src="Anh/Girl_Anh1/anh1.png" onclick="playGame()"/><br>
+<img id="Img2" src="Anh/Girl_Anh1/anh2.png" onclick="playGame1()"/><br>
+<img id="Img3" src="Anh/Girl_Anh1/anh3.png" onclick="playGame2()"/><br>
+<img id="Img4" src="Anh/Girl_Anh1/anh4.png" onclick="playGame3()"/><br>
+<img id="Img5" src="Anh/Girl_Anh1/anh5.png" onclick="playGame4()"/>
+</body>
+</html>
+<script>
+    const img1 = "Anh/Girl_Anh1/anh1.png";
+    const img2 = "Anh/Girl_Anh1/anh2.png";
+    const img3 = "Anh/Girl_Anh1/anh3.png";
+    const img4 = "Anh/Girl_Anh1/anh4.png";
+    const img5 = "Anh/Girl_Anh1/anh5.png";
+    let bien1 = 0;
+
+    const img1_1 = "Anh/Dola/Dola1.png";
+    const img1_2 = "Anh/Dola/Dola2.png";
+    const img1_3 = "Anh/Dola/Dola3.png";
+    const img1_4 = "Anh/Dola/Dola4.png";
+    const img1_5 = "Anh/Dola/Dola5.png";
+    let bien2 = 0;
+
+    const img2_1 = "Anh/Girl_Anh2/Anh2.1.png";
+    const img2_2 = "Anh/Girl_Anh2/Anh2.2.png";
+    const img2_3 = "Anh/Girl_Anh2/Anh2.3.png";
+    const img2_4 = "Anh/Girl_Anh2/Anh2.4.png";
+    const img2_5 = "Anh/Girl_Anh2/Anh2.5.png";
+    let bien3 = 0
+
+    const img3_1 = "Anh/Girl_Anh3/Anh3.1.png";
+    const img3_2 = "Anh/Girl_Anh3/Anh3.2.png";
+    const img3_3 = "Anh/Girl_Anh3/Anh3.3.png";
+    const img3_4 = "Anh/Girl_Anh3/Anh3.4.png";
+    const img3_5 = "Anh/Girl_Anh3/Anh3.5.png";
+    let bien4 = 0
+
+    const img4_1 = "Anh/Girl_Anh4/Anh4.1.png";
+    const img4_2 = "Anh/Girl_Anh4/Anh4.2.png";
+    const img4_3 = "Anh/Girl_Anh4/Anh4.3.png";
+    const img4_4 = "Anh/Girl_Anh4/Anh4.4.png";
+    const img4_5 = "Anh/Girl_Anh4/Anh4.5.png";
+    let bien5 = 0
+
+    let count = 1;
+
+    function playGame() {
+        let img = document.getElementById("Img1");
+        if (count === 1) {
+            img.src = img1_1;
+            bien1 = 1
+            count++
+        } else if (count === 2) {
+            img.src = img2_1
+            bien1 = 2
+            count++;
+        } else if (count === 3) {
+            img.src = img3_1
+            bien1 = 3
+            count++;
+        } else if (count === 4) {
+            img.src = img4_1
+            bien1 = 4
+            count++;
+        } else {
+            img.src = img1
+            bien1 = 5
+            count = 1
+        }
+    }
+
+    function playGame1() {
+        let img = document.getElementById("Img2");
+        if (count === 2) {
+            img.src = img1_2;
+            bien2 = 1
+            count++
+        } else if (count === 3) {
+            img.src = img2_2
+            bien2 = 2
+            count++;
+        } else if (count === 4) {
+            img.src = img3_2
+            bien2 = 3
+            count++;
+        } else if (count === 5) {
+            img.src = img4_2
+            bien2 = 4
+            count++;
+        } else {
+            img.src = img2
+            bien2 = 5
+            count = 2
+        }
+    }
+
+    function playGame2() {
+        let img = document.getElementById("Img3");
+        if (count === 3) {
+            img.src = img1_3;
+            bien3 = 1
+            count++
+        } else if (count === 4) {
+            img.src = img2_3
+            bien3 = 2
+            count++;
+        } else if (count === 5) {
+            img.src = img3_3
+            bien3 = 3
+            count++;
+        } else if (count === 6) {
+            img.src = img4_3
+            bien3 = 4
+            count++;
+        } else {
+            img.src = img3
+            bien3 = 5
+            count = 3
+        }
+    }
+
+    function playGame3() {
+        let img = document.getElementById("Img4");
+        if (count === 4) {
+            img.src = img1_4;
+            bien4 = 1
+            count++
+        } else if (count === 5) {
+            img.src = img2_4
+            bien4 = 2
+            count++;
+        } else if (count === 6) {
+            img.src = img3_4
+            bien4 = 3
+            count++;
+        } else if (count === 7) {
+            img.src = img4_4
+            bien4 = 4
+            count++;
+        } else {
+            img.src = img4
+            bien4 = 5
+            count = 4
+        }
+    }
+
+    function playGame4() {
+        let img = document.getElementById("Img5");
+        if (count === 5) {
+            img.src = img1_5;
+            bien5 = 1;
+            count++
+        } else if (count === 6) {
+            img.src = img2_5
+            bien5 = 2
+            count++;
+        } else if (count === 7) {
+            img.src = img3_5
+            bien5 = 3
+            count++;
+        } else if (count === 8) {
+            img.src = img4_5
+            bien5 = 4
+            count++;
+        } else {
+            img.src = img5
+            bien5 = 5
+            count = 5
+        }
+    }
+
+    function checkEndGame() {
+        console.log(bien1)
+        console.log(bien2)
+        console.log(bien3)
+        console.log(bien4)
+        console.log(bien5)
+        let setFlag = true;
+        if (bien1 !== bien2) {
+            setFlag = false;
+        } else if (bien1 !== bien3) {
+            setFlag = false;
+        } else if (bien1 !== img4) {
+            setFlag = false;
+        }else if (bien1 !== img5) {
+            setFlag = false;
+        }
+        if (setFlag) {
+            $(img1).style("box-shadow", "4px 4px 9px red")
+        } else {
+            $(img1).style("box-shadow", "2px 3px 3px black")
+        }
+    }
+
+    checkEndGame()
+
+
+    // function play() {
+    //     var target = event.target;
+    //     if (target.classList.contains('dung')) {
+    //         count++;
+    //     } else {
+    //         count = 0;
+    //     }
+    //     if (count === 5) {
+    //         let hinhDungs = document.querySelectorAll("");
+    //         for (var i = 0; i < hinhDungs.length; i++) {
+    //             hinhDungs[i].classList.add('mau-khac');
+    //         }
+    //     } else {
+    //         var hinhDungs = document.querySelectorAll('.dung');
+    //         for (var i = 0; i < hinhDungs.length; i++) {
+    //             hinhDungs[i].classList.remove('mau-khac');
+    //             hinhDungs[i].classList.add('mau-den');
+    //         }
+    //     }
+    // }
+
+
+</script>

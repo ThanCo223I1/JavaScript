@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<center>
+    <body>
+    <table>
+        <tr>
+            <td><input type="text" placeholder="Nhập số a:" id="A"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Nhập số b:" id="B"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Nhập số c:" id="C"></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="Test()">Kiểm Tra</button>
+            </td>
+        </tr>
+    </table>
+    </body>
+    <p id="result"></p>
+</center>
+</html>
+<script>
+    function Test() {
+        let a = document.getElementById("A");
+        let b = document.getElementById("B");
+        let c = document.getElementById("C");
+        a = parseInt(a.value);
+        b = parseInt(b.value);
+        c = parseInt(c.value);
+        if (a > b) {
+            if (b > c) {
+                document.getElementById("result").innerHTML = " Số: " + a + " Là Số Lớn Nhất";
+            } else {
+                document.getElementById("result").innerHTML = " Số: " + c + " Là Số Lớn Nhất";
+            }
+        } else if (b > c) {
+            document.getElementById("result").innerHTML = " Số: " + b + " Là Số Lớn Nhất";
+        }
+    }
+</script>

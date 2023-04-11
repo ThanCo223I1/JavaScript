@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng Cửu Chươn</title>
+    <style>
+        table {
+            text-align: center;
+            border-radius: 5px;
+            border: 5px outset gray;
+
+        }
+
+        h1 {
+            width: 350px;
+            text-align: center;
+            margin-left: 200px;
+            box-shadow: 2px 5px 5px red;
+        }
+    </style>
+</head>
+<body>
+<h1>BẢNG CỬU CHƯƠNG</h1>
+<p id="result"></p>
+
+</body>
+</html>
+<script>
+
+    let A = "<table border='3'>"
+    for (let i = 1; i <= 10; i++) {
+        A += "<tr style='text-align: center'>"
+        for (let j = 1; j <= 9; j++) {
+            A += "<td style='border-radius: 3px'>"
+            A += j + " X " + i + " = " + (i * j)
+            A += "</td>"
+        }
+        A += "</tr>"
+    }
+    A += "</table>"
+    document.getElementById("result").innerHTML = A
+</script>

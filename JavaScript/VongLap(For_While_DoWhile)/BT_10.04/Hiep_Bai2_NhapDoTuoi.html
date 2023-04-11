@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<!--bài 2: nhập vào tuổi và kiểm tra xem có hợp lệ hay không?-->
+<!--Nếu không hợp lệ thì bắt nhập lại cho đến khi nhập đúng thì dừng-->
+<!--Biết độ tuổi hợp lệ là trong khoảng 1 -> 100-->
+</body>
+</html>
+<script>
+    // // Cách1
+    // let a = prompt("Nhập tuổi") //50
+    // if (a > 100) {
+    //     alert("Hãy Nhập Lại ");
+    // } else {
+    //     alert("Bạn Nhập Thành Công Tuổi Là: " + a);
+    // }
+
+    // cách2
+    let a = 0;
+    do {
+        a = prompt("Nhập Tuổi");
+        if (a < 1 || a > 100)
+            alert("Bạn Nhập Lại Trong Khoảng 1->100")
+    } while (a < 1 || a > 100)
+    alert("Bạn Nhập Thành Công: " + a)
+
+</script>

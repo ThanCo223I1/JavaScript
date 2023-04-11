@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<input type="text" id="diem1"><br>-->
+<!--<input type="text" id="diem2"><br>-->
+<!--<input type="text" id="diem3"><br>-->
+<!--<button onclick="midtermScore()">Check</button>-->
+<!--<br><br>-->
+<!--<input type="text" id="diem4"><br>-->
+<!--<input type="text" id="diem5"><br>-->
+<!--<input type="text" id="diem6"><br>-->
+<!--<button onclick="calculateFinalGrade()">Check</button>-->
+<!--<br><br>-->
+<!--<input type="text" id="diem7"><br>-->
+<!--<input type="text" id="diem8"><br>-->
+<!--<button onclick="totalScore()">Check</button>-->
+<p id="Result"></p>
+</body>
+</html>
+<script>
+    // let a = document.getElementById("diem1");
+    // let b = document.getElementById("diem2");
+    // let c = document.getElementById("diem3");
+    //
+    // function midtermScore() {
+    //     a = parseFloat(a.value);
+    //     b = parseFloat(b.value);
+    //     c = parseFloat(c.value);
+    //     let midtermScoreResults = (a + b + c) / 3;
+    //     if (midtermScoreResults >= 8) {
+    //         document.getElementById("Result").innerHTML = midtermScoreResults + " Điểm" + " Xếp loại Giỏi";
+    //     } else if (8 > midtermScoreResults >= 6.5) {
+    //         document.getElementById("Result").innerHTML = midtermScoreResults + " Xếp loại Khá";
+    //     } else if (6.5 > midtermScoreResults >= 5) {
+    //         document.getElementById("Result").innerHTML = midtermScoreResults + " XXếp loại Trung Bình";
+    //     } else if (midtermScoreResults < 5) {
+    //         if (midtermScoreResults >= 3.5) {
+    //             document.getElementById("Result").innerHTML = midtermScoreResults + " Xếp loại Yếu";
+    //         } else {
+    //             document.getElementById("Result").innerHTML = midtermScoreResults + " Xếp loại Kém";
+    //         }
+    //
+    //     }
+    // }
+    //
+    // let d = document.getElementById("diem4");
+    // let e = document.getElementById("diem5");
+    // let f = document.getElementById("diem6");
+    //
+    // function calculateFinalGrade() {
+    //     d = parseFloat(d.value);
+    //     e = parseFloat(e.value);
+    //     f = parseFloat(f.value);
+    //     let finalResults = (d + e + f) / 3;
+    //     if (finalResults >= 8) {
+    //         document.getElementById("Result").innerHTML = finalResults + " Điểm" + " Xếp loại Giỏi";
+    //     } else if (8 > finalResults >= 6.5) {
+    //         document.getElementById("Result").innerHTML = finalResults + " Xếp loại Khá";
+    //     } else if (6.5 > finalResults >= 5) {
+    //         document.getElementById("Result").innerHTML = finalResults + " XXếp loại Trung Bình";
+    //     } else if (finalResults < 5) {
+    //         if (finalResults >= 3.5) {
+    //             document.getElementById("Result").innerHTML = finalResults + " Xếp loại Yếu";
+    //         } else {
+    //             document.getElementById("Result").innerHTML = finalResults+ " Xếp loại Kém";
+    //         }
+    //     }
+    // }
+    //
+    // let midtermScoreResults = document.getElementById("diem7");
+    // let finalResults = document.getElementById("diem8");
+    // function totalScore() {
+    //     midtermScoreResults = parseFloat(midtermScoreResults.value);
+    //     finalResults = parseFloat(finalResults.value);
+    //     let result = (midtermScoreResults + finalResults) / 2;
+    //     if (result >= 8) {
+    //         document.getElementById("Result").innerHTML = result + " Điểm" + " Xếp loại Giỏi";
+    //     } else if (8 > result >= 6.5) {
+    //         document.getElementById("Result").innerHTML = result + " Điểm" + " Xếp loại Khá";
+    //     } else if (6.5 > result >= 5) {
+    //         document.getElementById("Result").innerHTML = result + " Điểm" + " Xếp loại Trung Bình";
+    //     } else if (result < 5) {
+    //         if (result >= 3.5) {
+    //             document.getElementById("Result").innerHTML = result + " Điểm" + " Xếp loại Yếu";
+    //         } else {
+    //             document.getElementById("Result").innerHTML = result + " Điểm" + " Xếp loại Kém";
+    //         }
+    //     }document.getElementById("Result").innerHTML = "Kết quả cuối kỳ là: " + result + " Điểm."
+    // }
+    // Cach2:
+    let a = +prompt("Nhập Số a:");
+    let b = +prompt("Nhập Số b:");
+    let c = +prompt("Nhập Số c:");
+    let d = +prompt("Nhập Số d:");
+    let e = +prompt("Nhập Số e:");
+    let f = +prompt("Nhập Số f:");
+    let result = (a + b + c) / 3
+    let result1 = (d + e + f) / 3
+    let total = (result + result1) / 2
+    if (total >= 8) {
+        document.getElementById("Result").innerHTML = total + " Điểm" + " Xếp loại Giỏi";
+    } else if (total >= 6.5) {
+        document.getElementById("Result").innerHTML = total + " Điểm" + " Xếp loại Khá";
+    } else if (total >= 5) {
+        document.getElementById("Result").innerHTML = total + " Điểm" + " Xếp loại Trung Bình";
+    } else if (total >= 3.4) {
+        document.getElementById("Result").innerHTML = total + " Điểm" + " Xếp loại Yếu";
+    } else {
+        document.getElementById("Result").innerHTML = total + " Điểm" + " Xếp loại Kém";
+    }
+</script>

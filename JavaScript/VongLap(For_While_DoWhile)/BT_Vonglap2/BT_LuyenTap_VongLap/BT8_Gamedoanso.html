@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="Play()" type="button">Play Game</button>
+<!--<button onclick="Play()" type="button">Play Again</button>-->
+</body>
+</html>
+<script>
+    function Play() {
+        let play1 = +prompt("Nhập Số Từ: ");
+        let play2 = +prompt("Đến: ");
+        let play3 = +prompt("Mời Bạn Nhập: ");
+        let sum = 0
+        for (; play3 < play1 ||  play3 > play2;) {
+            sum++
+            if (sum === 3) {
+                alert("Bạn Đã Nhập Sai Rồi");
+                break;
+            }
+            play3 = prompt("Mời Bạn Nhập Lại")
+        }
+        if (sum < 3 ) {
+            alert("Chúc Mừng Bạn Đã Đoán Đúng Rồi")
+            alert("Kết Thúc Trò Chơi")
+        }
+    }
+</script>

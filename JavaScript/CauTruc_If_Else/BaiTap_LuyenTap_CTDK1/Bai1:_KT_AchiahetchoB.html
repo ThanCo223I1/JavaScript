@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không-->
+<input type="text" placeholder="Nhập Số A" id="nhapA"  >
+<input type="text" placeholder="Nhập Số B" id="nhapB">
+<button onclick="Enter()">Kiểm Tra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    // Cach1:
+  // let Enter1 = parseInt(prompt("Nhập Số A: "));
+  // let Enter2 = parseInt(prompt("Nhập Số B: "));
+  // if (Enter1%Enter2===0){
+  //   alert("Kết Quả: A Chia Hết Cho B");
+  // }else {
+  //   alert("Kết Quả: A Không Chia Hết Cho B");
+  // }
+  // Cach2:
+function Enter(){
+      let enterA = document.getElementById("nhapA");
+      enterA = parseInt(enterA.value);
+      let enterB = document.getElementById("nhapB");
+      enterB = parseInt(enterB.value);
+      let results = enterA%enterB
+      if (results === 0){
+          document.getElementById("result").innerHTML = "A chia hết cho B bằng: " + results
+      }else {
+          document.getElementById("result").innerHTML = "A không chia hết cho B bằng: " + results
+      }
+}
+
+
+
+</script>

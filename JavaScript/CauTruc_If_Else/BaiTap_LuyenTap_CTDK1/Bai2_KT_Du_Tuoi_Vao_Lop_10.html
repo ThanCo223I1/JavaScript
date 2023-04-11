@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.-->
+<input type="text" placeholder="Xin mời nhập tuổi" id="KT">
+<button onclick="Check()">Kiểm Tra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function Check() {
+        let enter = document.getElementById("KT");
+        enter = parseInt(enter.value);
+        if (enter === 15) {
+            document.getElementById("result").innerHTML = enter + " Tuổi: " + " Đủ điều kiện vào lớp 10 :> "
+        } else {
+            document.getElementById("result").innerHTML = enter + " Tuổi: " + " Không đủ điều kiện vào lớp 10 :> "
+        }
+    }
+</script>
