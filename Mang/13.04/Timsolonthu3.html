@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+  // let diem = [1, 2, 3, 4, 5, 6, 7, 8, 9,10, 11];
+  // let max1 = 0;
+  // let max2 = 0;
+  // let max3 ;
+  //
+  // function diemThi(diem) {
+  //   for (let i = 0; i < diem.length; i++) {
+  //
+  //     if (diem[i] > max1) {
+  //       max3 = max2;
+  //       max2 = max1;
+  //       max1 = diem[i];
+  //     } else if (diem[i] > max2 ) {
+  //       max3 = max2;
+  //       max2 = diem[i];
+  //     } else if (diem[i] > max3 ) {
+  //       max3 = diem[i];
+  //     }
+  //   }
+  //
+  //   return max2;
+  // }
+  // document.write(diemThi(diem));
+
+  let arr = [-3, 5, 1, 3, 10, 10];
+  let max = arr[0];
+  let index = 0;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+      index = i;
+    }
+  }
+  alert("số lớn nhất là: " + max + " Vị trí là: " + index);
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // function KT() {
+    //     let arr = [1, 5, 6, 7, 2, 20]
+    //     let a = +prompt("Nhap so: ");
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (a === arr[i]) {
+    //             document.write(a + " nam trong" + arr);
+    //             break;
+    //         } else {
+    //             document.write(a + " khong nam trong" + arr);
+    //             break;
+    //         }
+    //     }
+    // }
+    //
+    // KT()
+
+    function KT() {
+        let arr = [1, 3, 5, 7, 8, 9, 10]
+        let flag = true
+        let a = +prompt("Nhập Số");
+        for (let i = 0; i < arr.length; i++) {
+            if (a === arr[i]) {
+                flag = false;
+                document.write(a + " Nằm trong mảng: " + arr);
+                break;
+            }
+        }
+        if (flag) {
+            document.write(a + " Không nằm trong mảng: " + arr)
+        }
+    }
+
+    KT()
+</script>

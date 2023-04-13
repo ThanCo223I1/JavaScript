@@ -15,14 +15,13 @@
     let a = document.getElementById("number");
     a = parseInt(a.value);
     for (let i = 2; i <= a; i++) {
-        if (i === a) {
-            document.getElementById("result").innerHTML = a + " Là SNT";
-            break;
-        }
         if (a % i === 0) {
             document.getElementById("result").innerHTML = a + " Không Là SNT";
             break;
-        }
+        }else {
+        document.getElementById("result").innerHTML = a + " Là SNT";
+        break;
+      }
     }
     }
 </script>

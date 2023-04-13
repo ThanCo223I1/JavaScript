@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="HCN()">HCN</button>
+<div id="result"></div>
+</body>
+</html>
+<script>
+    function HCN() {
+        let a = ""
+        let b = "<table>"
+        for (let i = 0; i < 1; i++) {
+            for (let j = 0; j < 20; j++) {
+                a += "* "
+                b += "<br>";
+            }
+            b += "<tr>"
+            for (let j = 1; j < 8; j++) {
+                b += "<td>" ;
+                b += "<br>";
+                for (let k = 0; k < 20; k++) {
+                    a += "* "
+                }
+                b += "</td>"
+            }
+            b += "</tr>"
+            b += "</table>"
+        }
+        document.getElementById("result").innerHTML = a
+    }
+</script>
