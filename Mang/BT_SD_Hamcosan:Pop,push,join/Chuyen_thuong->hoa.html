@@ -9,18 +9,16 @@
 </html>
 <script>
 
-    let str ;
-    let Hoa = "ABC";
-    let Thuong = "abc"
+    let str = "AbcDefbueyfbeuofklkeuHIUIUH";
     let kq = [];
     for (let i = 0; i < str.length; i++) {
-        if (Hoa.indexOf(str[i]) !== -1) {
-            kq.push(str[i].toUpperCase());
-        } else if (Thuong.indexOf(str[i]) !== -1) {
+        if ('A' <= str[i] && str[i] <= 'Z') {
             kq.push(str[i].toLowerCase());
+        } else if ('a' <= str[i] && str[i] <= 'z') {
+            kq.push(str[i].toUpperCase());
         } else {
-            kq.push(str[i]);
+            kq.push(str[i])
         }
-        document.write(result.join(" "));
     }
+    document.write(kq);
 </script>
