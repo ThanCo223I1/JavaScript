@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function isPrime() {
+        let flag = true;
+        let a = prompt("Nhập Số:")
+        for (let i = 2; i < a; i++) {
+            if (a % i === 0) {
+                alert(a + " Không là SNT");
+                flag = false;
+                break;
+            }
+        }
+        if (flag)
+            alert(a + " Là SNT");
+    }
+
+    isPrime()
+</script>

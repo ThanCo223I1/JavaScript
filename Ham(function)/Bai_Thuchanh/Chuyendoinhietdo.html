@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="demo"  placeholder="Nhập Nhiệt Độ">
+<button onclick="Do()" type="button">Kiểm Tra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function Do() {
+        let doF = document.getElementById("demo");
+        doF = parseFloat(doF.value);
+        doC = (doF - 32) / 1.8
+        document.getElementById("result").innerHTML = doF + " Độ F " + " = " + doC + " Độ C"
+    }
+</script>
