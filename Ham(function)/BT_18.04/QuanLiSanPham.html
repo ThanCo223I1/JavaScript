@@ -3,30 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <style>
+    <style>
+        td {
 
-  </style>
+            width: 300px;
+            height: 10px;
+        }
+    </style>
 </head>
 <body>
 <h1>Add New Product</h1>
 <input type="text" id="Input" placeholder="New Product">
-<button onclick="" type="button">Add</button>
+<button onclick="Them()" type="button">Add</button>
+<br>
+<br>
+<input type="text" id="editSp" placeholder="Edit Product">
+<input type="text" id="VT" placeholder="XN Edit " hidden="hidden">
+<button onclick="xacNhanSua()">Edit</button>
 <h1> Display All Product</h1>
+<table>
+    <thead>
+    <tr>
+        <td>Product Name</td>
+        <td></td>
+        <td></td>
+        <td id="length"></td>
+    </tr>
+    </thead>
+    <tbody id="noiDung">
+
+    </tbody>
+</table>
+
 </body>
 </html>
 <script>
-  let arr = ["Sony Xperia","Samsung Galaxy","Nokia"];
-  let data = ""
-  function quanLi(){
-    data += "<tr>"
-    data += "<td>"
-    data += "</td>"
-    data += "<td>"
-    data += "</td>"
-    data += "<td>"
-    data += "</td>"
-    data += "<td>"
-    data += "</td>"
-    data += "</tr>"
-  }
+    let arr = ["Sony Xperia", "Samsung Galaxy", "Nokia"];
+
+    hienThi()
+
+    function hienThi() {
+        let data = ""
+        for (let i = 0; i < arr.length; i++) {
+
+            data += `<tr class="w">
+                    <td> ` + arr[i] + `</td>
+                    <td><button onclick="Sua(` + i + `)">Edit</button></td>
+                    <td><button onclick="Xoa(` + i + `)">Delete</button></td>
+                    <td></td>
+                 </tr>`
+        }
+        document.getElementById("noiDung").innerHTML = data;
+        document.getElementById("length").innerHTML= arr.length + " Product"
+    }
+
+    function Them() {
+        let name = document.getElementById("Input").value;
+        arr.push(name);
+        hienThi();
+        document.getElementById("Input").value = ""
+    }
+
+    function Sua(i) {
+        document.getElementById("editSp").value = arr[i];
+       hienThi()
+        document.getElementById("VT").value = i;
+
+    }
+    function xacNhanSua(){
+        let id = document.getElementById("VT").value;
+        arr[id] = document.getElementById("editSp").value;
+        hienThi()
+    }
+
+    let flag = false;
+    function Xoa(i) {
+        let arr1 = []
+        for (let j = 0; j < arr.length; j++) {
+            if(j!==i){
+                arr1.push(arr[j])
+                flag = true;
+            }
+        }if(flag){
+            arr = arr1;
+        }
+        hienThi()
+    }
 </script>

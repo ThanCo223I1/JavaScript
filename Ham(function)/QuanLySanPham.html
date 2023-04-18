@@ -9,7 +9,7 @@
 <input type="text" id="tenSP">
 <button onclick="them()">Them san pham</button>
 <br><br>
-<input type="text" id="idSp" hidden="hidden">
+<input type="text" id="idSp">
 <input type="text" id="suaSp">
 <button onclick="xacNhanSua()">Sua san pham</button>
 
@@ -62,8 +62,8 @@
 
   function xacNhanSua() {
       let id = document.getElementById("idSp").value
-      let name = document.getElementById("suaSp").value
-      arr[id] = name
+      let Name = document.getElementById("suaSp").value
+      arr[id] = Name
 
       hienThi()
   }
