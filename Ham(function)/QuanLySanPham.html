@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="tenSP">
+<button onclick="them()">Them san pham</button>
+<br><br>
+<input type="text" id="idSp" hidden="hidden">
+<input type="text" id="suaSp">
+<button onclick="xacNhanSua()">Sua san pham</button>
+
+<br>
+<br>
+
+<h1>Display all product</h1>
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody id="hienthi">
+
+    </tbody>
+</table>
+
+<script>
+  let arr = ['samsong', 'iphone', 'airpot', 'xiaomy']
+
+  hienThi()
+  function hienThi(){
+    let str = ""
+    for (let i = 0; i < arr.length; i++) {
+      str += `<tr>
+                <td>` + arr[i] + `</td>
+                <td><button onclick="xoa(` + i + `)">Xoa</button></td>
+                <td><button onclick="sua(` + i + `)">Sua</button</td>
+            </tr>`
+    }
+
+    document.getElementById("hienthi").innerHTML = str;
+  }
+
+  function them(){
+      let name = document.getElementById("tenSP").value
+      arr.push(name)
+      hienThi()
+
+      document.getElementById("tenSP").value = ""
+  }
+
+  function sua(i){
+      document.getElementById("idSp").value = i;
+      document.getElementById("suaSp").value = arr[i];
+  }
+
+  function xacNhanSua() {
+      let id = document.getElementById("idSp").value
+      let name = document.getElementById("suaSp").value
+      arr[id] = name
+
+      hienThi()
+  }
+
+  function xoa(i){
+      // xoa san pham khi biet vi tri i
+
+  }
+</script>
+</body>
+</html>

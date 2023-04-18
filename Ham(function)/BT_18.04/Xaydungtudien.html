@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Ứng Dụng Từ Điển</h1>
+ví dụ: ["Banana","Apple","Orange"], ["Chuối","Táo","Cam"]
+<br><br>
+<input type="text" id="input">
+<button onclick="test()">Kiểm Tra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function test() {
+        let arr = ["Banana", "Apple", "Orange"];
+        let arr1 = ["Quả Chuối", "Quả Táo", "Quả Cam"];
+        let inp = document.getElementById("input").value;
+        let index = -1;
+        for (let i = 0; i < arr.length; i++) {
+            if (inp === arr[i]){
+                index = i
+                break;
+            }
+            if (inp === arr1[i]){
+                index = i
+                break;
+            }
+
+        }if (index !== -1){
+           document.getElementById("result").innerHTML = "Kết quả là: " + arr1[index];
+           document.getElementById("result").innerHTML = "Kết quả là: " + arr[index];
+
+        } else {
+            document.getElementById("result").innerHTML = "Không tìm thấy từ khóa: " + inp ;
+        }
+    }
+
+</script>
