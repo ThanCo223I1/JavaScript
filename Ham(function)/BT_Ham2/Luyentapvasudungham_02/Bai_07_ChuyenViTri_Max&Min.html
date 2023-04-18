@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<p id="demo"></p>
+<body>
+</body>
+<script>
+    let arr = [5, 3, 8, 2, 7];
+    let maxViTri = 0;
+    let minViTri = 0;
+    let max;
+    let min
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[maxViTri] < arr[i]) {
+            maxViTri = i
+            max = arr[maxViTri];
+        }
+        for (let j = 1; j < arr.length; j++) {
+            if (arr[minViTri] > arr[j]) {
+                minViTri = j
+                min = arr[minViTri];
+            }
+        }
+    }
+    arr[maxViTri] = min;
+    arr[minViTri] = max;
+    document.getElementById("demo").innerHTML = arr.join(",");
+</script>
+</html>

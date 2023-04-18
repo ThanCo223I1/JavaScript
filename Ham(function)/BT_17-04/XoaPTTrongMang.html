@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    // Bai1: Xoa pt tai vi tri 1 trong mang
+  let arr = [1,7,7,7,8,5,2]
+  let arr1 = [];
+  let a = 0;
+  function deleteIndex (){
+    for (let i = 0; i < arr.length ; i++) {
+      if (arr[i] !== 7){
+          arr1[a] = arr[i]
+          a++;
+      }
+    }document.write("Mảng mới là: " + "[" + arr1 + "]")
+  }
+
+deleteIndex();
+
+    // Bai2: Xoa 1 phan tu trong mang(pt co the trung)
+    // let arr1 = [2,3,4,5,5,6,7,5]
+</script>

@@ -9,19 +9,49 @@
 </body>
 </html>
 <script>
-    function isPrime() {
-        let flag = true;
-        let a = prompt("Nhập Số:")
-        for (let i = 2; i < a; i++) {
-            if (a % i === 0) {
-                alert(a + " Không là SNT");
-                flag = false;
+    // function isPrime() {
+    //     let flag = true;
+    //     let a = prompt("Nhập Số:")
+    //     for (let i = 2; i < a; i++) {
+    //         if (a % i === 0) {
+    //             alert(a + " Không là SNT");
+    //             flag = false;
+    //             break;
+    //         }
+    //     }
+    //     if (flag)
+    //         alert(a + " Là SNT");
+    // }
+    //
+    // isPrime()
+    let a = prompt("dd");
+    let b = true;
+    function check (a){
+        for (let i = 2 ; i < a; i++) {
+            if (a%i === 0){
+                b = false;
                 break;
             }
-        }
-        if (flag)
-            alert(a + " Là SNT");
+        }return b
+    }alert(check(a))
+  // Cach 3
+        function SNT (number) {
+
+        for (let i = 2; i < 10000; i++) {
+        if (i === number) {
+        document.write("Là Số Nguyên Tố");
+        break;
+    }
+        if (number % i === 0) {
+        document.write("Không phải là Số Nguyên Tố");
+        break;
+    }
+    }
     }
 
-    isPrime()
+        a = +prompt("Nhập Số");  //5
+        SNT(a)  // gia tri truyen vao
+
+
+
 </script>

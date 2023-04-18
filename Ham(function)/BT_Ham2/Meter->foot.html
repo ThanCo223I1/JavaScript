@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="demo" placeholder="Nhập số foot">
+<input type="number" id="demo1" placeholder="Nhập số meter">
+<button onclick="footToMeter()">Enter</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function footToMeter() {
+        let foot = document.getElementById("demo")
+        let meter1 = 0.305 * foot;
+        document.write(" Kết quả meter là: " + meter1 + "<br>");
+        let meter = +prompt("Nhập meter cần chuyển");
+        let foot1 = 3.279 * meter;
+        document.write("Kết quả foot là: " + foot1);
+    }
+
+    footToMeter()
+</script>

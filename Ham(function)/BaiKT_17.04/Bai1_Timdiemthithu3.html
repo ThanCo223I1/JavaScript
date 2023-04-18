@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    // let diem = [1, 2, 3, 4, 5, 6, 4, 10, 9, 10, 11, 19, 20];
+    // let max1 = 0;
+    // let max2 = 0;
+    // let max3 = 0;
+    //
+    // function diemThi(diem) {
+    //     for (let i = 0; i < diem.length; i++) {
+    //
+    //         if (diem[i] > max1) {
+    //             max3 = max2;
+    //             max2 = max1;
+    //             max1 = diem[i];
+    //         } else if (diem[i] > max2) {
+    //             max3 = max2;
+    //             max2 = diem[i];
+    //         } else if (diem[i] > max3) {
+    //             max3 = diem[i];
+    //         }
+    //     }
+    //
+    //     return max3;
+    // }
+    //
+    // document.write(diemThi(diem));
+
+    // cach2:
+    let arr = [-1, 0, 3, 4, 5, 12, 5, 7, 9, 10, 10];
+
+    function max(arr) {
+        // b1: gan lai vi tri tu max -> min
+        let kq;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    kq = arr[j]
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = kq;
+                }
+            }
+        }
+        // mang sau khi chuyen la: [12,10,10,9,7,5,4,3,0,-1]
+        //b2: duyet mang dat dieu kien neu bien dem = 3 thi se tim duoc max thu 3
+        let dem = 1;
+        let min = arr[0]
+        for (let k = 1; k < arr.length; k++) {
+            if (arr[k] < min) {
+                dem += 1;
+                min = arr[k];
+
+            }
+            if (dem === 5) {
+                alert(min)
+            }
+        }
+    }
+
+    max(arr);
+</script>

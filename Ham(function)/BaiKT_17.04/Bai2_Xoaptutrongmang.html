@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    // let arr = [1,2,3,4,5,6,7,8,9,10]
+    // let number = parseInt(prompt(" Index bạn muốn xóa ?"))
+    // let arr1 = []
+    //
+    // function tryRemoveFromArray(arr, number) {
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (number < arr.length) {
+    //             for (let j = 0; j < number; j++) {
+    //                 arr1.push(arr[j])
+    //             }
+    //             for (let z = number + 1; z < arr.length; z++) {
+    //                 arr1.push(arr[z])
+    //             }
+    //             return arr1
+    //         } else {
+    //             return arr
+    //         }
+    //     }
+    // }
+    // document.getElementById("result").innerHTML = "kết quả là:" + (tryRemoveFromArray(arr, number))
+
+    // let arr = [1,2,3,4,5,6,7,8,9,10];
+    // let number = parseInt(prompt("Nhap Index ban muon xoa"))
+    // let arr1 = []
+    // function tryRemoveFromArray(arr, number){
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (number < arr.length){
+    //             if ( i !== number){
+    //                 arr1.push(arr[i])
+    //             }
+    //         }
+    //
+    //     }document.getElementById("result").innerHTML = "Array is lower:u " + arr1
+    // }tryRemoveFromArray(arr,number)
+
+
+    // xoa 1 phan tu trong mang tai vi tri bat ky bang cach newArray
+    // let arr = [7, 6, 2, 10, 1]
+    // let arr2 = new Array(arr.length - 1)
+    // let number = parseInt(prompt("Nhap vi tri can xoa "));
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (i < number) {
+    //             arr2[i] = arr[i]
+    //         }
+    //         if (i > number) {
+    //             arr2[i - 1] = arr[i];
+    //         }
+    //     }document.write("array = [" + arr2 + "]")
+
+
+    //Xoa phan tu trong mang co trung
+    // let arr = [7, 6, 2, 2, 3, 4, 4, 4, 4];
+    // let number = parseInt(prompt("Nhap so"));
+    // let arr2 = [];
+    // let count = 0
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] !== number) {
+    //         arr2[count] = arr[i]
+    //         count++
+    //     }
+    // }
+    // document.write(arr2)
+
+
+    // let arr = [7, 6, 2, 2, 3, 4, 4, 4, 4];
+    // let number = parseInt(prompt("Nhap so"));
+    // let arr2 = new Array(0);
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] !== number) {
+    //         arr2[arr2.length] = arr[i]
+    //     }
+    // }document.write(arr2)
+
+
+    let arr = [7, 6, 2, 2, 3, 4, 4, 4, 4];
+    let number = parseInt(prompt("Nhap so"));
+    let count = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== number) {
+            count++
+        }
+    }
+    let arr2 = new Array(count);
+    count = 0;
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j] !== number) {
+            arr2[count++] = arr[j]
+        }
+    }
+
+    document.write(arr2)
+</script>

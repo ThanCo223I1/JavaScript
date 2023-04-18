@@ -8,9 +8,13 @@
 </body>
 </html>
 <script>
-  let arr = [1,4,6,8,3,20,23,10,14,4,68,5]
+  let arr = [1,4,6,8,3,20,23,10,14,4]
   let max = arr[0]
+  let count;
   for (let i = 1; i < arr.length; i++) {
-
+      if (arr[i]>=10){
+          count++
+          console.log(count)
+      }
   }
 </script>

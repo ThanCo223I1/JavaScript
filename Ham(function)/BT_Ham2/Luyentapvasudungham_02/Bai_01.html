@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính Bình Phương</title>
+</head>
+<body>
+<!--Square of: <input type="text" id="input">-->
+<!--<button onclick="square2()">Enter</button>-->
+<!--Is: <span id="result"></span>-->
+<!--<script>-->
+<!--  function square (number){-->
+<!--    let result = number * number;-->
+<!--    return result;-->
+<!--  }-->
+<!--  function square2(){-->
+<!--    let square1 = document.getElementById("input").value;-->
+<!--    let result = square(square1);-->
+<!--    document.getElementById("result").innerHTML= result-->
+
+
+<!--  }-->
+<!--</script>-->
+Square of:<label> <input type="text" id= "input"> </label>
+<button onclick="square()">Enter</button>
+Is: <span id="result"></span>
+<script>
+  let result
+  function square() {
+    let number = document.getElementById("input").value;
+    result = number * number;
+    document.getElementById("result").innerHTML = result;
+  }
+</script>
+</body>
+</html>

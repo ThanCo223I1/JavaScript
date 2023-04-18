@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let str2 = prompt("Nhập chuỗi")
+    // let str1= prompt("Nhập chuỗi muốn kiểm tra")
+    // let count = 0
+    // str2.split()
+    // str1.split()
+    // function checkString(str2, str1) {
+    //     for (let i = 0; i < str2.length; i++) {
+    //         for (let j = 0; j < str1.length; j++) {
+    //             if (str1[j] === str2[i]) {
+    //                 count++
+    //             }
+    //         }
+    //     }
+    //     if (count === str1.length) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    //
+    // }
+    // console.log(checkString(str2, str1))
+    // cach2:
+
+
+    let str1 = prompt("Nhập Chuỗi");
+    let str2 = prompt("Nhập chuỗi cần kiểm tra");
+    function checkString(str1, str2) {
+        for (let i = 0; i < str1.length; i++) {
+            let count = 1
+            if (str1[0] === str2[i]) {
+                for (let j = 0; j < str2.length; j++) {
+                    if (str1[j] === str2[i + j]) {
+                        count++
+                    }
+
+                }
+            }
+            if (count === str1.length) {
+                alert(str1 + " Nằm trong " + str2);
+            }
+        }
+    }
+
+    checkString(str1, str2)
+</script>
+</body>
+</html>
