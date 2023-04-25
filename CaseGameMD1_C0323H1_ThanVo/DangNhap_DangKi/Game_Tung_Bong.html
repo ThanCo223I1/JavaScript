@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ball Tossing Game</title>
+    <style>
+        #gameCanvas {
+            background-color: gray;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        body{
+            text-align: center;
+        }
+        h1 {
+            border-radius: 3px;
+            border: 2px solid black;
+            width: 300px;
+        }
+        body{
+            background-image: url("https://haycafe.vn/wp-content/uploads/2022/12/Hinh-anh-em-be-Han-Quoc.jpg");
+            background-size: cover;
+           padding-block: 50px;
+        }
+    </style>
+</head>
+<center>
+    <body><canvas id="gameCanvas" width="473" height="650"></canvas></body>
+</center>
+</html>
+<script>
+    // lấy canvas và context
+
+    let canvas = document.getElementById("gameCanvas");
+    let ctx = canvas.getContext("2d");
+    // khai báo biến
+    let x = canvas.width / 2; // khoi tao vien dan nam giua canvas
+    let y = canvas.height - 30; // vi tri ban dau cua qua bong
+    let ballRadius = 10; // kich thuoc qua bong
+    let dx = 2; // huong va toc do di chuyen
+    let dy = -2; // huong va toc do di chuyen
+    let paddleHeight = 20; // do rong cua thanh ngang
+    let paddleWidth = 100; // do dai thanh ngang
+    let paddleX = (canvas.width - paddleWidth) / 2; // khoang cach cua thanh ngang nam giua
+    let rightPressed = false; // cam co cho ban phim
+    let leftPressed = false; // cam co cho ban phim
+    let brickRowCount = 10; // so hang vien gach
+    let brickColumnCount = 12; // so cot  vien gach
+    let brickWidth = 25; // do dai cua vien gach
+    let brickHeight = 20; // do rong cua vien gach
+    let brickPadding = 10; // khoang cach tu vien gach ra bien canvas
+    let brickOffsetTop = 100; // khoang cach tu vien gach len thanh tren canvas
+    let brickOffsetLeft = 31; // canh tat ca cac vien gach giua cac ben
+    let score = 0; // diem
+    let lives = 3; // 3 luot choi
+
+    // tạo các viên gạch
+    let bricks = [];
+    for (let i = 0; i < brickColumnCount; i++) {
+        bricks[i] = [];
+        for (let j = 0; j < brickRowCount; j++) {
+            bricks[i][j] = {x: 0, y: 0, status: 1};
+        }
+    }
+
+    // hàm vẽ bóng
+    function drawBall() {
+        ctx.beginPath();
+        ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+        ctx.fillStyle = "black";
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    // hàm vẽ thanh trượt
+    function drawPaddle() {
+        ctx.beginPath();
+        ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+        ctx.fillStyle = "black";
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    // hàm vẽ gạch
+    function drawBricks() {
+        for (let i = 0; i < brickColumnCount; i++) {
+            for (let j = 0; j < brickRowCount; j++) {
+                if (bricks[i][j].status === 1) {
+                    let brickX = (i * (brickWidth + brickPadding)) + brickOffsetLeft;
+                    let brickY = (j * (brickHeight + brickPadding)) + brickOffsetTop;
+                    bricks[i][j].x = brickX;
+                    bricks[i][j].y = brickY;
+                    ctx.beginPath();
+                    ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                    ctx.fillStyle = "aqua";
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            }
+        }
+    }
+
+    // ham ve tieu de
+
+    function titLe(){
+        ctx.font = "30px Arial ";
+        ctx.strokeStyle = "lime";
+        ctx.lineWidth = 3;
+        ctx.strokeText("BALL TOSSING GAME",canvas.width/6, 35 );
+    }
+    // hàm vẽ điểm
+    function drawScore() {
+        ctx.font = "20px Arial";
+        ctx.fillStyle = "aqua";
+        ctx.fillText("Score: " + score, 10, 75);
+    }
+
+    // ham ve mang
+    function drawLives() {
+        ctx.font = "20px Arial";
+        ctx.fillStyle = "aqua";
+        ctx.fillText("Lives: " + lives, canvas.width - 95, 75);
+    }
+
+    // hàm va chạm
+    function collisionDetection() {
+        for (let i = 0; i < brickRowCount; i++) {
+            for (let j = 0; j < brickColumnCount; j++) {
+                let b = bricks[j][i];
+                if (b.status === 1) {
+                    if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+                        dy = -dy;
+                        b.status = 0;
+                        score++;
+                        if (score === brickRowCount * brickColumnCount) {
+                            document.location.reload();
+                           alert("YOU WIN,CONGRATULATIONS!")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // hàm di chuyển thanh trượt
+    function movePaddle() {
+        if (rightPressed && paddleX < canvas.width - paddleWidth) {
+            paddleX += 10;
+        } else if (leftPressed && paddleX > 0) {
+            paddleX -= 10;
+        }
+    }
+
+    // hàm vẽ trò chơi
+    function draw() {
+// xóa màn hình
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+// vẽ bóng
+        drawBall();
+
+// vẽ thanh trượt
+        drawPaddle();
+
+// vẽ gạch
+        drawBricks();
+
+// kiểm tra va chạm
+        collisionDetection();
+
+// vẽ điểm và mạng
+        drawScore();
+        drawLives();
+        titLe()
+
+// di chuyển thanh trượt
+        movePaddle();
+
+// kiểm tra va chạm với biên của canvas
+        if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+            dx = -dx;
+        }
+        if (y + dy < ballRadius) {
+            dy = -dy;
+        } else if (y + dy > canvas.height - ballRadius) {
+            if (x > paddleX && x < paddleX + paddleWidth) {
+                dy = -dy;
+            } else {
+                lives--;
+                if (!lives) {
+                    document.location.reload();
+                  alert("GAME OVER!!!")
+
+                } else {
+                    x = canvas.width / 2;
+                    y = canvas.height - 30;
+                    dx = 3;
+                    dy = -3;
+                    paddleX = (canvas.width - paddleWidth) / 2;
+                }
+            }
+        }
+
+// di chuyển bóng
+        x += dx;
+        y += dy;
+
+// vẽ lại màn hình sau một khoảng thời gian
+        requestAnimationFrame(draw);
+    }
+
+    // lắng nghe sự kiện phím được nhấn và thả
+    document.addEventListener("keydown", keyDownHandler, false);
+    document.addEventListener("keyup", keyUpHandler, false);
+
+    // hàm xử lý khi phím được nhấn
+    function keyDownHandler(e) {
+        if (e.keyCode === 39) {
+            rightPressed = true;
+        } else if (e.keyCode === 37) {
+            leftPressed = true;
+        }
+    }
+
+    // hàm xử lý khi phím được thả
+    function keyUpHandler(e) {
+        if (e.keyCode === 39) {
+            rightPressed = false;
+        } else if (e.keyCode === 37) {
+            leftPressed = false;
+        }
+    }
+    // vẽ trò chơi
+    draw();
+</script>

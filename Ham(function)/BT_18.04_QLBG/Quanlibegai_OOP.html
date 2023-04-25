@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        button {
+            width: 90px;
+            height: 33px;
+            background-color: gray;
+            border-radius: 5px;
+            box-shadow: 2px 2px 3px gray;
+            font-size: 20px;
+        }
+
+        input {
+            border: 3px inset gray;
+            border-radius: 3px;
+            width: 200px;
+            height: 25px;
+        }
+
+        table {
+            font-size: 20px;
+            border: 2px;
+        }
+
+        td {
+
+            width: 200px;
+            height: 33px;
+        }
+
+        .tb {
+            text-align: center;
+        }
+
+        #noiDung {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Add New Product</h1>
+<input type="text" id="Input" placeholder="New Product">
+<input type="text" id="Input1" placeholder="New Product">
+<input type="text" id="Input2" placeholder="New Product">
+<button onclick="Them()" type="button">Add</button>
+<br>
+<br>
+<input type="text" id="editSp" placeholder="Edit Product">
+<input type="text" id="editSp1" placeholder="Edit Product">
+<input type="text" id="editSp2" placeholder="Edit Product">
+<input type="text" id="VT" placeholder="XN Edit " hidden="hidden">
+<button onclick="xacNhanSua()">Edit</button>
+<h1> Display All Product</h1>
+<table>
+    <thead class="tb">
+    <tr>
+
+        <td><h3>Product Name</h3></td>
+        <td><h3>Age</h3></td>
+        <td><h3>Image</h3></td>
+        <td></td>
+        <td></td>
+        <td id="length" style="color: red"></td>
+    </tr>
+    </thead>
+    <tbody id="noiDung">
+    </tbody>
+</table>
+
+</body>
+</html>
+<script>
+    class beGai {
+        name;
+        age;
+        img;
+
+
+        constructor(name, age, img) {
+            this.name = name;
+            this.age = age;
+            this.img = img;
+        }
+    }
+
+    let Dental = new beGai("Name: Dental", "Age: 5", "<img src=\"../../JavaScript/CauTruc_If_Else/Anh/Anhbegai/Bé Dental.jpeg\" height=\"250\" width=\"200\"/>");
+    let Lucky = new beGai("Name: Lucky", "Age: 4", "<img src=\"../../JavaScript/CauTruc_If_Else/Anh/Anhbegai/bé lucky.jpeg\" height=\"250\" width=\"200\"/>");
+    let cuteGirl = new beGai("Name: cuteGirl", "Age: 3", "<img src=\"../../JavaScript/CauTruc_If_Else/Anh/Anhbegai/bé-dethuong.jpeg\" height=\"250\" width=\"200\"/>")
+    let arr = [Dental, Lucky, cuteGirl];
+    hienThi()
+
+    function hienThi() {
+        let data = ""
+        for (let i = 0; i < arr.length; i++) {
+            data += `<tr class="w">
+                    <td> ` + arr[i].name + `</td>
+                    <td> ` + arr[i].age + `</td>
+                    <td> ` + arr[i].img + `</td>
+                    <td><button onclick="Sua(` + i + `)">Edit</button></td>
+                    <td><button onclick="Xoa(` + i + `)">Delete</button></td>
+                    <td></td>
+                 </tr>`
+        }
+        document.getElementById("noiDung").innerHTML = data;
+        document.getElementById("length").innerHTML = arr.length + " Product"
+    }
+
+    function Them() {
+        let name = document.getElementById("Input").value;
+        let name1 = document.getElementById("Input1").value;
+        let name2 = document.getElementById("Input2").value;
+        name2 = `<img src=` + name2 + `\" height=\"250\" width=\"200\"/>`
+        let them = new beGai(name, name1, name2)
+        arr.push(them);
+        hienThi();
+        document.getElementById("Input").value = ""
+    }
+
+    function Sua(i) {
+        document.getElementById("editSp").value = arr[i].name;
+        document.getElementById("editSp1").value = arr[i].age;
+        document.getElementById("editSp2").value = arr[i].img;
+        document.getElementById("VT").value = i;
+        hienThi()
+    }
+
+    function xacNhanSua() {
+        let xNam = document.getElementById("editSp").value
+        let xAge = document.getElementById("editSp1").value
+        let xImg = document.getElementById("editSp2").value
+        let edit = new beGai(xNam, xAge, xImg);
+        let id = document.getElementById("VT").value;
+        arr[id] = edit
+        hienThi()
+    }
+
+    function Xoa(i) {
+        let arr1 = []
+        for (let j = 0; j < arr.length; j++) {
+            if (j !== i) {
+                arr1.push(arr[j])
+            }
+        }
+        arr = arr1;
+        hienThi()
+    }
+</script>

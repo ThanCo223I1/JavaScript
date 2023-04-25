@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Bai 07: Tạo một class Bank để quản lý tài khoản ngân hàng của các khách hàng và các giao dịch.
+</body>
+</html>
+<script>
+  class Bank{
+    money = 10000000
+    name;
+    moneyIn;
+    moneyOut;
+    constructor(name,moneyIn,moneyOut) {
+      this.name = name;
+      this.moneyIn = moneyIn;
+      this.moneyOut = moneyOut;
+    }
+    moneyin = function (){
+       this.money += this.moneyIn
+      console.log(this.name +":")
+      console.log("MoneyIn: " + this.money)
+    }
+    moneyout = function (){
+       this.money -= this.moneyOut
+      console.log("MoneyOut: " + this.money)
+    }
+  }let money = new Bank("Thân", 10000000,2000000);
+  money.moneyin();
+  money.moneyout();
+</script>

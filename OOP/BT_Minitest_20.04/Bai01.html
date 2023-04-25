@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 1: Tạo một class Animal để mô tả đặc điểm chung -->
+<!--của các động vật và các phương thức như eat(), sleep() và move().-->
+
+</body>
+</html>
+<script>
+    class Animal {
+        name; //ten
+        color; // mau sac
+        gender; //gioi tinh
+        weight; // can nang
+        constructor(name, color, gender, weight) {
+            this.name = name;
+            this.color = color;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        display = function () {
+            console.log("Name is: " + this.name +
+                ", Color is: " + this.color +
+                ", Gender is: " + this.gender +
+                ", Weight is: " + this.weight)
+        }
+    }
+
+    let ani = new Animal("Cat","write", "Male", "5kg");
+    ani.display()
+
+</script>

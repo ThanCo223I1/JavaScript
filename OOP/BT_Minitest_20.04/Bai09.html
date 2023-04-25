@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Bai 09: Tạo một class Book để lưu trữ thông tin về một cuốn sách như tên, tác giả, năm xuất bản, v.v.
+</body>
+</html>
+<script>
+  class Book{
+    tenSach;
+    tacGia;
+    namSanXuat;
+    constructor(tenSach,tacGia,namSanXuat) {
+      this.tenSach = tenSach;
+      this.tacGia = tacGia;
+      this.namSanXuat = namSanXuat;
+    }display = function (){
+      console.log("Tên Sách: " + this.tenSach + ", Tác Giả: " + this.tacGia + ", Năm SX: " + this.namSanXuat + ".")
+    }
+  }let book = new Book("Truyện Kiều", "Nguyễn Du",1902);
+  book.display()
+</script>

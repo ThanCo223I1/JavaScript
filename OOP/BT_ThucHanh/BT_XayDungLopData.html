@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+  // cach1:
+  class MyDate{
+    day;
+    month;
+    year;
+    constructor(day,month,year) {
+      this.day =day;
+      this.month =month;
+      this.year =year;
+    }
+    display = function () {
+      console.log("Ngày là " + this.day + "<br>" + "Tháng là " + this.month + "<br>" + "Năm là " + this.year )
+    }
+  }
+  let myDate = new MyDate(30,4,2023);
+  myDate.display()
+
+  // cach2
+
+  // function MyDate (day,month,year){
+  //   this.day = day;
+  //   this.month = month;
+  //   this.year = year;
+  //   this.display = function (){
+  //     console.log("day "+ this.day + " month " + this.month + " year " + this.year)
+  //   }
+  // }
+  // let myd = new MyDate(26,2,2023);
+  // myd.display()
+</script>

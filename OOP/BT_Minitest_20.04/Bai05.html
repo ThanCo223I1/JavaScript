@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Bai 05: Tạo một class Car để mô tả các đặc tính của một chiếc xe như:
+tốc độ, mức tiêu thụ nhiên liệu, số chỗ ngồi, v.v.
+</body>
+</html>
+<script>
+    class Car {
+        speed; // toc do
+        consume; // tieu thu
+        numberOfSeats; // so cho ngoi
+        constructor(speed, consume, numberOfSeats) {
+            this.speed = speed;
+            this.consume = consume;
+            this.numberOfSeats = numberOfSeats;
+        }
+        display = function () {
+            console.log("Speed: " + this.speed + ", Consume: " + this.consume + ", numberOfSeats: " + this.numberOfSeats );
+        }
+    }
+
+    let car = new Car("100km/hour","30km/liter","4 seats");
+    car.display()
+</script>

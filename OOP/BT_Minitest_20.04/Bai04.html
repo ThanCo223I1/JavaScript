@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Bai 04: Tạo một class Person để lưu trữ thông tin cá nhân của một người như:
+tên, địa chỉ, email, số điện thoại, v.v.
+</body>
+</html>
+<script>
+    class Person {
+        Name;
+        Address;
+        Email;
+        PhoneNumber;
+        constructor(Name, Address, Email, PhoneNumber) {
+            this.Name = Name;
+            this.Address = Address;
+            this.Email = Email;
+            this.PhoneNumber = PhoneNumber;
+        }
+        display = function () {
+            console.log("Name is: " + this.Name + ", Address is: " + this.Address + ", Email: " + this.Email + ", Phone: " + this.PhoneNumber + ".");
+        }
+    }
+    let Per = new Person("Henry", "Ha Noi", "henry123@gmail.com", "0901234567");
+    Per.display()
+</script>

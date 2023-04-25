@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Bai 2: Tạo một class Rectangle để tính diện tích và chu vi của một hình chữ nhật.
+</body>
+</html>
+<script>
+    class Rectangle {
+        width;
+        height;
+
+        constructor(width,height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        display = function () {
+            let P = (this.width + this.height) * 2;
+            console.log(" Dien tich la: " + P)
+            let S = (this.width * this.height);
+            console.log("Chu vi la: " + S)
+        }
+    }
+    let kq = new Rectangle(5,5 );
+    kq.display();
+</script>

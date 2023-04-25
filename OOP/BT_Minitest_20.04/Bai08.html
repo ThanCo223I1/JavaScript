@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Tạo một class Employee để lưu trữ thông tin về một nhân viên như tên, địa chỉ, lương, v.v.
+</body>
+</html>
+<script>
+  class Person {
+    Name;
+    Address;
+    wage;
+    constructor(Name, Address,wage) {
+      this.Name = Name;
+      this.Address = Address;
+      this.wage = wage;
+    }
+    display = function () {
+      console.log("Name is: " + this.Name + ", Address is: " + this.Address + ", Wage: " + this.wage + ".");
+    }
+  }
+  let Per = new Person("Henry", "Ha Noi","10.000.000 VND");
+  Per.display()
+</script>

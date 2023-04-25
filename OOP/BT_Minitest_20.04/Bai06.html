@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Bai 06: Tạo một class Product để lưu trữ thông tin về sản phẩm như tên, giá, mô tả, v.v.
+</body>
+</html>
+<script>
+  class Product{
+    Name;
+    Price;
+    Describe; //Mo ta
+    constructor(Name, Price,Describe) {
+      this.Name =Name;
+      this.Price = Price;
+      this.Describe =Describe;
+    }
+    display = function (){
+        console.log("Name product: " + this.Name + ", Price: " + this.Price + ", Describe: " + this.Describe )
+    }
+  }
+  let Pro = new Product("Pen", 10.000 , "green");
+  Pro.display();
+</script>

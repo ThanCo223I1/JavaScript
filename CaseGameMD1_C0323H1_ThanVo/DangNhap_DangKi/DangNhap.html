@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Nhập Tài Khoản</title>
+    <script src="Account.js"></script>
+    <script src="Login.js"></script>
+    <style>
+        body {
+            padding-block: 200px;
+            background-image: url("https://luv.vn/wp-content/uploads/2021/10/hinh-anh-be-gai-xinh-nhu-thien-than-3.jpg");
+            background-size: cover;
+        }
+
+        input {
+            text-align: center;
+            border: 3px inset gray;
+            width: 250px;
+            border-radius: 5px;
+        }
+
+        button {
+            border: 3px outset gray;
+            width: 100px;
+            border-radius: 3px;
+        }
+
+        table {
+            text-align: center;
+            padding-block: 50px;
+            border: 3px solid gray;
+            background-color: orange;
+            width: 400px;
+            height: 100px;
+        }
+    </style>
+</head>
+<center>
+    <body>
+    <table>
+        <tr>
+            <td>Username: <input type="text" id="username"></td>
+        </tr>
+        <tr>
+            <td>Password: <input type="password" id="password"></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="login()">Login</button>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="Dangki.html">Register</a></td>
+        </tr>
+
+    </table>
+    </body>
+</center>
+</html>
+<script>
+
+
+
+
+    function login() {
+        let name = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+        if(localStorage.getItem("user")){
+            let doiTuong = JSON.parse(localStorage.getItem("user"));
+            if(doiTuong.userName===name && doiTuong.passWord===pass){
+                alert("DNTC")
+                window.location.replace("Game_Tung_Bong.html");
+            }else {
+                alert("sai thong tin")
+            }
+        }
+    }
+
+</script>

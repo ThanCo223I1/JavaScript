@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Bai 03: Tạo một class Circle để tính diện tích và chu vi của một hình tròn.
+</body>
+</html>
+<script>
+  class Circle{
+    radius; // ban kinh
+    constructor(radius) {
+      this.radius = radius;
+    }
+    display = function (){
+      //Hay diện tích hình tròn cũng được tính theo công thưc là:
+      // bình phương đường kính nhân với Pi rồi chia cho 4.
+      let S = (this.radius * this.radius) * Math.PI
+      console.log("Dien tich hinh tron la: " + S);
+      //Công thức chu vi hình tròn được tính bằng cách lấy 2 lần bán kính nhân pi
+      //hay đường kính nhân với pi.
+      let P = this.radius * 2 * Math.PI
+      console.log("Chu vi hinh trong la: " + P);
+    }
+  }let Cir = new Circle(4)
+  Cir.display()
+
+</script>

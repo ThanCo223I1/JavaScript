@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Kí Tài Khoản</title>
+    <script src="Account.js"></script>
+    <script src="Login.js"></script>
+    <style>
+        body {
+            padding-block: 200px;
+            background-image: url("https://haycafe.vn/wp-content/uploads/2022/12/Hinh-anh-em-be-Han-Quoc.jpg");
+            background-size: auto;
+            background-position: center;
+        }
+
+        table {
+            background-color: yellowgreen;
+            border: 2px inset gray;
+            width: 500px;
+            height: 180px;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        input {
+            border: 3px inset gray;
+            border-radius: 3px;
+            width: 350px;
+        }
+
+        button {
+            border: 3px outset gray;
+            width: 120px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <table>
+        <tr>
+            <th>Username:</th>
+            <td><input type="text" id="user" placeholder="Username" required></td>
+        </tr>
+        <tr>
+            <th> Password:</th>
+            <td><input type="password" id="pass" placeholder="Password" required></td>
+        </tr>
+        <tr>
+            <th>Phone Number:</th>
+            <td><input type="text" id="phone" placeholder="Phone number" required></td>
+        </tr>
+        <tr>
+            <th> Email:</th>
+            <td><input type="email" id="email" placeholder="Email" required></td>
+        </tr>
+        <tr>
+            <th><a href="DangNhap.html">Already have a registered account</a></th>
+            <td style="text-align: center">
+                <button onclick="register()">Register</button>
+            </td>
+        </tr>
+    </table>
+</center>
+</body>
+</html>
+<script>
+    function register() {
+        let name = document.getElementById("user").value;
+        let pass = document.getElementById("pass").value;
+        let phone = document.getElementById("phone").value;
+        let email = document.getElementById("email").value;
+        if (name === "" || pass === "" || phone === "" || email === "") {
+            alert("Xin moi ban nhap thong tin")
+        } else {
+            let save = {
+                userName: name,
+                passWord: pass,
+                phoneNumber: phone,
+                email: email
+            }
+check()
+            if (save !== {}) {
+                localStorage.setItem("user", JSON.stringify(save))
+                alert("Dktc");
+                window.document.location.href = "DangNhap.html";
+            }
+        }
+    }
+
+    function check(userName, passWord) {
+        let arr = Object.entries(localStorage);
+        let check = false;
+        for (let user of arr) {
+            if(user[0] === userName && user[1] ===passWord ){
+                check = true;
+                break;
+            }
+        }return check;
+    }
+</script>

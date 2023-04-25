@@ -31,7 +31,6 @@
     </tr>
     </thead>
     <tbody id="noiDung">
-
     </tbody>
 </table>
 
@@ -54,7 +53,7 @@
                  </tr>`
         }
         document.getElementById("noiDung").innerHTML = data;
-        document.getElementById("length").innerHTML= arr.length + " Product"
+        document.getElementById("length").innerHTML = arr.length + " Product"
     }
 
     function Them() {
@@ -66,25 +65,28 @@
 
     function Sua(i) {
         document.getElementById("editSp").value = arr[i];
-       hienThi()
+        hienThi()
         document.getElementById("VT").value = i;
 
     }
-    function xacNhanSua(){
+
+    function xacNhanSua() {
         let id = document.getElementById("VT").value;
         arr[id] = document.getElementById("editSp").value;
         hienThi()
     }
 
     let flag = false;
+
     function Xoa(i) {
         let arr1 = []
         for (let j = 0; j < arr.length; j++) {
-            if(j!==i){
+            if (j !== i) {
                 arr1.push(arr[j])
                 flag = true;
             }
-        }if(flag){
+        }
+        if (flag) {
             arr = arr1;
         }
         hienThi()

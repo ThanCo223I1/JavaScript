@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<img src ="../../CaseGameMD1_C0323H1_ThanVo/img/down1 (1).png" height="86" width="59" id="image" hidden="hidden"/>
+<canvas id="myCanvas" width="800" height="800" style="border: 1px solid black"></canvas>
+<button onclick="move()">Move</button>
+</body>
+</html>
+
+<script>
+  let canvas = document.getElementById("myCanvas");
+  let ctx = canvas.getContext("2d");
+  let image = document.getElementById("image");
+
+  class Hoa {
+    constructor(x, y, image) {
+      this.speed = Math.random() * 3 + 1;
+      this.image = image;
+      this.x = x;
+      this.y = y;
+    }
+    draw = function () {
+      ctx.drawImage(this.image, this.x, this.y, 80, 80);
+    }
+    drop() {
+      this.y += this.speed;
+    }
+  }
+
+  let hoa1 = new Hoa(0, 0, image);
+  let hoa2 = new Hoa(300, 0, image);
+  let hoa3 = new Hoa(600, 0, image);
+  let hoa4 = new Hoa(200, 0, image);
+  let hoa5 = new Hoa(320, 0, image);
+  let hoa6 = new Hoa(340, 0, image);
+  let hoa7 = new Hoa(360, 0, image);
+  let hoa8 = new Hoa(400, 0, image);
+  let hoa9 = new Hoa(380, 0, image);
+
+  let arr = [hoa1, hoa2, hoa3, hoa4, hoa5,hoa5,hoa6,hoa7,hoa8,hoa9];
+
+  function clear() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  setInterval(move, 30);
+
+  function move() {
+    clear();
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].y > 700){
+        arr[i].y = 0;
+        arr[i].x = Math.random() *600;
+
+      }
+      arr[i].drop();
+      arr[i].draw();
+    }
+  }
+</script>
